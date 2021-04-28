@@ -1,2 +1,4 @@
 %h1 Product#show
-%p Find me in app/views/product/show.html.haml
+%ul
+  - @products.each do |product|
+    %li= link_to product.title, product_path(product)

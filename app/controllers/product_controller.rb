@@ -3,6 +3,7 @@ class ProductController < ApplicationController
   end
 
   def show
+    @products = Product.all
   end
 
   def edit
