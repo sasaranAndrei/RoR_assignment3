@@ -127,16 +127,4 @@
               %span.price-value 120.00
     %footer.footer
       %p Copyright © 2021 EUREKA CAFFE
-      %button.add-button{:onclick => "toggleAddItem()"} ADD NEW ITEM
-      #add-item
-        %label{:for => "new-item-name"} Name:
-        %input#new-item-name{:type => "text"}/
-        %br/
-        %label{:for => "new-item-group"} Group:
-        %input#new-item-group{:type => "text"}/
-        %br/
-        %label{:for => "new-item-price"} Price:
-        %input#new-item-price{:type => "text"}/
-        %br/
-        / TODO: ask for image too
-        %button.confirm-button{:onclick => "insertNewItem()"} CONFIRM
+      = button_to 'DASHBOARD', products_path, method: 'get'

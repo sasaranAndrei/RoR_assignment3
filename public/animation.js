@@ -29,7 +29,7 @@ function sliderChange(){
   showMenuItems(items);
   filterMenuItems(items, sliderValue);
 }
-
+/*
 function toggleAddItem(){
   addItemDiv = document.getElementById("add-item");
   display = window.getComputedStyle(addItemDiv).display;
@@ -108,3 +108,4 @@ function insertNewItem(){
 function onLoad (){
 
 }
+*/
