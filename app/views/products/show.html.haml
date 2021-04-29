@@ -1,0 +1,5 @@
+%h1 Show Product
+%h2= @product.title
+%h3= @product.description
+%h4= @product.price
+= link_to 'Remove', @product, method: :delete, data: { confirm: 'Are you sure?' }
