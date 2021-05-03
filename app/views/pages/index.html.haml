@@ -53,78 +53,16 @@
             %span#maxValue $135
       .main-food
         #food-container
-          .box
-            .img-box
-              %img.food-img{:src => "../images/carbonara.jpeg"}/
-            %span -
-            %span.item-name Pasta Carbonara
-            %span.item-group Second courses
-            %span.item-price
-              $
-              %span.price-value 9.00
-          .box
-            .img-box
-              %img.food-img{:src => "../images/chickenSoup.jpg"}/
-            %span -
-            %span.item-name Chicken Soup
-            %span.item-group Entrees
-            %span.item-price
-              $
-              %span.price-value 13.00
-          .box
-            .img-box
-              %img.food-img{:src => "../images/vitaminSalad.jpg"}/
-            %span -
-            %span.item-name Vitamin Salad
-            %span.item-group Salads
-            %span.item-price
-              $
-              %span.price-value 7.00
-          .box
-            .img-box
-              %img.food-img{:src => "../images/pastaWalnut.jpg"}/
-            %span -
-            %span.item-name Pasta With Walnut
-            %span.item-group Second courses
-            %span.item-price
-              $
-              %span.price-value 25.00
-          .box
-            .img-box
-              %img.food-img{:src => "../images/item4.jpg"}/
-            %span -
-            %span.item-name Item Four
-            %span.item-group Second courses
-            %span.item-price
-              $
-              %span.price-value 87.00
-          .box
-            .img-box
-              %img.food-img{:src => "../images/item5.jpg"}/
-            %span -
-            %span.item-name Item Five
-            %span.item-group Second courses
-            %span.item-price
-              $
-              %span.price-value 57.00
-          .box
-            .img-box
-              %img.food-img{:src => "../images/item6.jpg"}/
-            %span -
-            %span.item-name Item Six
-            %span.item-group Second courses
-            %span.item-price
-              $
-              %span.price-value 102.00
-          .box
-            .img-box
-              %img.food-img{:src => "../images/item7.jpg"}/
-            %span -
-            %span.item-name Item Seven
-            %span.item-group Second courses
-            %span.item-price
-              $
-              %span.price-value 120.00
+          - @products.each do |product|
+            .box 
+              .img-box
+                %img.food-img{:src => "../images/carbonara.jpeg"}/
+              %span -
+              %span.item-name= product.title
+              %span.item-group= product.description
+              %span.item-price
+                $
+                %span.price-value= product.price
     %footer.footer
       %p Copyright © 2021 EUREKA CAFFE
       = button_to 'DASHBOARD', products_path, method: 'get'
