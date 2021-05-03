@@ -56,7 +56,7 @@
           - @products.each do |product|
             .box 
               .img-box
-                %img.food-img{:src => "../images/carbonara.jpeg"}/
+                = image_tag(product.picture, :class => "food-img") if product.picture.attached?
               %span -
               %span.item-name= product.title
               %span.item-group= product.description
