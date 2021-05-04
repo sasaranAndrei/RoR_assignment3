@@ -2,4 +2,5 @@
 %h2= @product.title
 %h3= @product.description
 %h4= @product.price
+= image_tag(@product.picture) if @product.picture.attached?
 = link_to 'Remove', @product, method: :delete, data: { confirm: 'Are you sure?' }
