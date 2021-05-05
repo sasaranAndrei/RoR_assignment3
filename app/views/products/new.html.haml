@@ -1,4 +1,7 @@
 %h3 Insert a Product
+- if @product.errors.any?
+  - @product.errors.full_messages.each do |message|
+    %h3= message
 = form_with model: @product do |form|
   = form.text_field :title, placeholder: "title"
   = form.text_field :description, placeholder: "description"

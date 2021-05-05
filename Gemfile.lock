@@ -274,7 +274,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
-  cloudinary
+  cloudinary (~> 1.20)
   dotenv-rails
   haml-rails (~> 2.0)
   jbuilder (~> 2.7)
