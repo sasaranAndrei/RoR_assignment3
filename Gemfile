@@ -3,13 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
-# gem "aws-sdk-s3", require: false
-gem 'cloudinary'
+gem 'cloudinary', '~> 1.20'
 gem 'shrine', '~> 3.3'
 gem 'shrine-cloudinary', '~> 1.1'
-
 gem 'haml-rails', '~> 2.0'
-# gem 'sass-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
