@@ -6,8 +6,7 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @product = Product.new
@@ -19,12 +18,11 @@ class ProductsController < ApplicationController
       redirect_to product_path(@product)
     else
       flash[:error] = "Please provide invalid input"
-      redirect_to new_product_path
+      redirect_to products_path
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @product.update(product_params)
@@ -32,7 +30,7 @@ class ProductsController < ApplicationController
       redirect_to product_path(@product)
     else
       flash[:error] = "Please provide invalid input"
-      redirect_to new_product_path
+      redirect_to products_path
     end
   end
 
