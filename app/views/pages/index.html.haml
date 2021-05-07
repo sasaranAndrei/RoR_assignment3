@@ -1,0 +1,68 @@
+!!!
+%html
+  %head
+    %script{:src => "./animation.js"}
+  %body
+    %header.header
+      .bg-image
+      .top-container
+        .logo-container
+          %img.logo{:src => "../images/logo.png"}/
+          %span.logo-name
+            EUREKA
+            %br>/
+            CAFFE
+        %nav
+          %ul.navigation-top
+            %li.nav-item
+              %a.nav-link{:href => "#home"} HOME
+            %li.nav-item
+              %a.nav-link{:href => "#about"} ABOUT
+            %li.nav-item
+              %a.nav-link{:href => "#service"} SERVICE
+            %li.nav-item
+              %a.nav-link{:href => "#blog"} BLOG
+            %li.nav-item
+              %a.nav-link{:href => "#contacts"} CONTACTS
+      %h1.title Ordering food
+      .flex-container
+        %span.underline ..................................................................................
+        %img.mini-logo{:src => "../images/miniLogo.png"}/
+        %span.underline ..................................................................................
+      %p.description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea soluta pariatur voluptatum fugiat voluptatem officiis non! Exercitationem, explicabo error.
+    %main.main
+      .main-top
+        .dropdown-container
+          %select.select
+            %option{:value => "category"} CATEGORY
+            %option{:value => "firstCategory"} firstCategory
+          %span#arr1.arrow
+          %select.select
+            %option{:value => "sorting"} SORTING
+            %option{:value => "firstSorting"} firstSorting
+          %span#arr2.arrow
+          %select.select
+            %option{:value => "vegetarian"} VEGETARIAN
+            %option{:value => "firstVegetarian"} firstVegetarian
+          %span.arrow
+        .slider-container
+          .field
+            %span.price PRICE
+            %span.min-value $0
+            %input#slider{:max => "135", :min => "0", :oninput => "sliderChange()", :steps => "1", :type => "range", :value => "135"}/
+            %span#maxValue $135
+      .main-food
+        #food-container
+          - @products.each do |product|
+            .box 
+              .img-box
+                = image_tag(product.picture, :class => "food-img") if product.picture.attached?
+              %span -
+              %span.item-name= product.title
+              %span.item-group= product.description
+              %span.item-price
+                $
+                %span.price-value= product.price
+    %footer.footer
+      %p Copyright © 2021 EUREKA CAFFE
+      = button_to 'DASHBOARD', products_path, method: 'get'
