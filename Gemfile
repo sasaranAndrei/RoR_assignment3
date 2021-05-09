@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'bcrypt', '~> 3.1'
 gem 'sprockets', '~> 4.0'
 gem 'cloudinary', '~> 1.20'
 gem 'shrine', '~> 3.3'
