@@ -3,6 +3,7 @@
   %head
     %script{:src => "./animation.js"}
   %body
+    = render 'layouts/header'
     %header.header
       .bg-image
       .top-container
@@ -65,4 +66,4 @@
                 %span.price-value= product.price
     %footer.footer
       %p Copyright © 2021 EUREKA CAFFE
-      = button_to 'DASHBOARD', products_path, method: 'get'
+      = button_to 'DASHBOARD', dashboard_path, method: 'get'
