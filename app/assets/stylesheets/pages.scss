@@ -251,7 +251,7 @@ input[type="range"] {
 }
 .footer {
   position: absolute;
-  padding-top: 6em;
+  padding-top: 8em;
   width: 100%;
   height: 50px;
   top: 1800px;
@@ -266,4 +266,8 @@ input[type="range"] {
 }
 .confirm-button {
   align-self: center;
+}
+.item-cart {
+  max-width: 30px;
+  max-height: 30px;
 }

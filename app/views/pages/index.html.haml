@@ -58,12 +58,12 @@
             .box 
               .img-box
                 = image_tag(product.picture, :class => "food-img") if product.picture.attached?
-              %span -
               %span.item-name= product.title
               %span.item-group= product.description
               %span.item-price
                 $
                 %span.price-value= product.price
+              %span= image_tag("cart", class: 'item-cart')
     %footer.footer
       %p Copyright © 2021 EUREKA CAFFE
       = button_to 'DASHBOARD', dashboard_path, method: 'get'
