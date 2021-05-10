@@ -41,11 +41,8 @@ aside {
   width: 25%;
   text-align: center;
 }
-input, textarea, select, .uneditable-input {
+input.form-control, textarea.form-control, select.form-control {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
-}
-input {
-  height: auto !important;
 }
