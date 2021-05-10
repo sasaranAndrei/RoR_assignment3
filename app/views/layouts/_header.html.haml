@@ -2,17 +2,8 @@
   %nav.authentication-nav
     %ul.authentication-ul
       - if logged_in?
-        = link_to "Log out", logout_path, method: :delete
+        %li= link_to "Log out", logout_path, class: 'header-btn btn-logout', method: :delete
+        %li= link_to "My profile", current_user, class: 'header-btn'
       - else
-        = link_to "Log in", login_path
-      = link_to "Sign up", signup_path
-      -#   -# %li.dropdown
-      -#   -#   %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Account
-      -#   -#   %ul.dropdown-menu
-      -#   -#     %li= link_to "Profile", current_user 
-      -#   -#     %li= link_to "Settings", '#'
-      -#   -#     %li.divider
-      -#   -#     %li= link_to "Log out", logout_path, method: :delete 
-      -# - else
-      -#   %li= link_to "Log in", login_path
-      
+        %li= link_to "Log in", login_path, class: 'header-btn btn-login'
+      %li= link_to "Sign up", signup_path, class: 'header-btn btn-signup'

@@ -1,6 +1,5 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "variables";
+
 .header {
   position: relative;
   left: 0;
@@ -58,7 +57,7 @@
   font-size: large;
   margin-left: 1.5em;
   padding: 0 20px;
-  color: rgb(255, 102, 0);
+  color: $site-color;
   &:first-child {
     list-style-type: none;
   }

@@ -1,6 +1,38 @@
+@import "variables";
 .authentication {
   background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: right;
 }
-
+.authentication-ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding-right: 70px;
+}
+.authentication-ul li {
+  margin-left: 50px;
+}
+.header-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 5px 10px;
+  text-decoration: none; 
+  color: $site-color;
+}
+.btn-login {
+  background-color: $site-color;
+  color: white;
+}
+.btn-logout {
+  background-color: red;
+  color: white;
+}
+.btn-signup {
+  border-width: 4px;
+  border-color: $site-color;
+  background-color: white;
+  color: $site-color;
+}
