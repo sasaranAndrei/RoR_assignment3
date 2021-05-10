@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2021_05_09_121156) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.float "price"
+    t.string "title", null: false
+    t.text "description", null: false
+    t.float "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
