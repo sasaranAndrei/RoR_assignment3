@@ -1,11 +1,11 @@
 .authentication
   %nav.authentication-nav
     %ul.authentication-ul
-      = link_to "Log in", login_path
+      - if logged_in?
+        = link_to "Log out", logout_path, method: :delete
+      - else
+        = link_to "Log in", login_path
       = link_to "Sign up", signup_path
-      -# - if logged_in?
-      -#   %h5 Logged in
-      -#   =link_to "Log out", logout_path, method: :delete
       -#   -# %li.dropdown
       -#   -#   %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Account
       -#   -#   %ul.dropdown-menu
