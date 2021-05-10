@@ -1,0 +1,5 @@
+%h1 Your cart contains:
+- if @cart.empty?
+  %p WTF???
+- @cart.each do |product|
+  %h3= product.title
