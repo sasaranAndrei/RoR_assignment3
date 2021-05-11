@@ -14,4 +14,3 @@ Product.create([
                 { title: 'Item Five', description: 'Second courses', price: 57.00 }, 
                 { title: 'Item Six', description: 'Second courses', price: 102.00 }
               ])
-              
