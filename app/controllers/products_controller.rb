@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  include SessionsHelper
   before_action :initialize_session, :load_cart
   before_action :current_product, only: [:show, :edit, :update, :destroy]
   
@@ -40,9 +41,19 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart 
+    if logged_in?
+      id = params[:id].to_i
+      session[:cart] << id unless session[:cart].include?(id)
+      redirect_to root_path  
+    else 
+      redirect_to login_path
+    end
+  end
+  
+  def remove_from_cart
     id = params[:id].to_i
-    session[:cart] << id unless session[:cart].include?(id)
-    redirect_to root_path
+    session[:cart].delete(id)
+    redirect_to cart_path
   end
 
   private
