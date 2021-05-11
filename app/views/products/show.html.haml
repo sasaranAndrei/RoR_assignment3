@@ -5,4 +5,3 @@
 = image_tag(@product.picture, height: '450', width: '300', class: 'image') if @product.picture.attached?
 %br>/
 %h4= link_to 'Remove', @product, method: :delete, data: { confirm: 'Are you sure?' }
-
