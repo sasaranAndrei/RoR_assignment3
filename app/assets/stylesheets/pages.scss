@@ -263,6 +263,10 @@ input[type="range"] {
   align-self: center;
 }
 .item-cart {
-  max-width: 30px;
-  max-height: 30px;
+  max-width: $item-cart-size;
+  max-height: $item-cart-size;
+}
+.logo-cart {
+  max-width: $logo-cart-size;
+  max-height: $logo-cart-size;
 }
