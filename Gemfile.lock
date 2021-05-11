@@ -289,12 +289,12 @@ DEPENDENCIES
   selenium-webdriver
   shrine (~> 3.3)
   shrine-cloudinary (~> 1.1)
-  spring
+  spring (~> 2.1)
   sprockets (~> 4.0)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
-  webdrivers
+  webdrivers (~> 4.6)
   webpacker (~> 5.0)
 
 RUBY VERSION
