@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :current_user, only: [:show, :edit, :update, :destroy]
+  before_action :current_user, only: %i[show edit update destroy]
   
   def show; end
 
