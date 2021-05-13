@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
       redirect_to product_path(@product)
     else
       flash[:error] = 'Please provide invalid input'
-      redirect_to products_path
+      redirect_to(products_path)
     end
   end
 
@@ -28,16 +28,16 @@ class ProductsController < ApplicationController
   def update
     @product.update(product_params)
     if @product.valid?
-      redirect_to product_path(@product)
+      redirect_to(product_path(@product))
     else
       flash[:error] = 'Please provide invalid input'
-      redirect_to products_path
+      redirect_to(products_path)
     end
   end
 
   def destroy 
     @product.destroy
-    redirect_to products_path
+    redirect_to(products_path)
   end
 
   def add_to_cart 
