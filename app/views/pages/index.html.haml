@@ -57,12 +57,12 @@
           - @products.each do |product|
             .box 
               .img-box
-                = image_tag(product.picture, :class => "food-img") if product.picture.attached?
+                = image_tag(product.picture, :class => 'food-img') if product.picture.attached?
               %span.item-name= product.title
               %span.item-group= product.description
               %span.item-price
                 $
                 %span.price-value= product.price
-              %span= link_to image_tag("cart.jpg", class: 'item-cart'), add_to_cart_product_path(product.id), method: :post
+              %span= link_to image_tag('cart.jpg', class: 'item-cart'), add_to_cart_product_path(product.id), method: :post
     %footer.footer
       %p Copyright © 2021 EUREKA CAFFE
