@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     delete :remove_from_cart, on: :member
   end
   resources :products
-  resources :users, only: %i[new show]
+  resources :users
 end

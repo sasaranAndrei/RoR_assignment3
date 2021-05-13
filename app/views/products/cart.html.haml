@@ -7,7 +7,7 @@
       .cart-box
         %h2= product.title
         %h3= product.description
-        %h4= product.price.to_s + "$"
+        %h4= "#{ product.price.to_s } $"
         = button_to 'remove', remove_from_cart_product_path(product), class: 'header-btn btn-logout', method: :delete
-  %h4= "Total price of your cart: #{ total_price(@cart) }$"
-%h2= link_to "Order some food", root_path
+  %h4= "Total price of your cart: #{ total_price(@cart) } $"
+%h2= link_to 'Order some food', root_path
