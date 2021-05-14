@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   include SessionsHelper
+
   before_action :initialize_session, :load_cart
   before_action :current_product, only: %i[show edit update destroy]
   
@@ -16,6 +17,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.create(product_params)
     if @product.valid?
+      Cloudinary::Uploader.upload(product_params[:picture])
       redirect_to product_path(@product)
     else
       flash[:error] = 'Please provide invalid input'

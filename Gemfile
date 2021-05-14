@@ -5,9 +5,8 @@ ruby '3.0.0'
 
 gem 'bcrypt', '~> 3.1'
 gem 'sprockets', '~> 4.0'
+gem 'carrierwave', '~> 2.2'
 gem 'cloudinary', '~> 1.20'
-gem 'shrine', '~> 3.3'
-gem 'shrine-cloudinary', '~> 1.1'
 gem 'haml-rails', '~> 2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
