@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   include SessionsHelper
+  
   before_action :initialize_session, :load_cart
   before_action :current_product, only: %i[show edit update destroy]
   
