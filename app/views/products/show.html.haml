@@ -1,7 +1,7 @@
 %h1 Show Product
 %h2= @product.title
 %h3= @product.description
-%h4= @product.price
-= image_tag(@product.picture, height: '450', width: '300') if @product.picture.attached?
+%h4= "#{ @product.price.to_s } $"
+= image_tag(@product.picture, height: '450', width: '300', class: 'image') if @product.picture.attached?
 %br>/
-= link_to 'Remove', @product, method: :delete, data: { confirm: 'Are you sure?' }
+%h4= link_to 'Remove', @product, method: :delete, data: { confirm: 'Are you sure?' }

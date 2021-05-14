@@ -1,6 +1,6 @@
 function updateSliderValue(){
   sliderValue = document.getElementById("slider").value;
-  document.getElementById("maxValue").innerHTML = sliderValue;
+  document.getElementById("maxValue").innerHTML = "$" + sliderValue;
   return sliderValue;
 }
 

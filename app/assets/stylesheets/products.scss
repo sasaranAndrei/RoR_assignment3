@@ -1,3 +1,20 @@
-// Place all the styles related to the Products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'variables';
+
+.dashboard-title {
+  text-align: left;
+}
+.cart-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 100px;
+}
+.cart-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px;
+  margin-right: 10px;
+  border: 2px solid $site-color;
+  border-radius: 20%;
+}
