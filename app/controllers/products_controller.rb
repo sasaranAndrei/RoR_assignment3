@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.create(product_params)
     if @product.valid?
+      byebug
       Cloudinary::Uploader.upload(product_params[:picture])
       redirect_to product_path(@product)
     else
