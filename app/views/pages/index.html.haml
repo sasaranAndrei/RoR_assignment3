@@ -57,7 +57,7 @@
           - @products.each do |product|
             .box 
               .img-box
-                = image_tag(product.picture, :class => 'food-img') if product.picture.attached?
+                = image_tag(product.picture.to_s, :class => 'food-img') if product.picture.attached?
               %span.item-name= product.title
               %span.item-group= product.description
               %span.item-price
