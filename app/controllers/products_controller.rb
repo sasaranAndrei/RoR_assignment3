@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     @product = Product.create(product_params)
     if @product.valid?
       # byebug
-      Cloudinary::Uploader.upload('cart.jpg')
+      Cloudinary::Uploader.upload('app/assets/images/cart.jpg')
       redirect_to product_path(@product)
     else
       flash[:error] = 'Please provide invalid input'
