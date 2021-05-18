@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     if @user.save
       reset_session
       log_in(@user) 
-      flash[:success] = 'Welcome to our restaurant!'
       redirect_to(@user)
     else
       render('new')

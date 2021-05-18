@@ -19,7 +19,6 @@ class ProductsController < ApplicationController
     if @product.valid?
       redirect_to(product_path(@product))
     else
-      flash[:error] = 'Please provide invalid input'
       redirect_to(products_path)
     end
   end
@@ -31,7 +30,6 @@ class ProductsController < ApplicationController
     if @product.valid?
       redirect_to(product_path(@product))
     else
-      flash[:error] = 'Please provide invalid input'
       redirect_to(products_path)
     end
   end
