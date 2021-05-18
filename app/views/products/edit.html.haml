@@ -1,7 +1,11 @@
 %h3 Update Product Details
 = form_with model: @product do |form|
   = form.text_field :title, placeholder: @product.title
+  
   = form.text_field :description, placeholder: @product.description
+  
   = form.number_field :price, placeholder: @product.price
+  
   = form.file_field :picture
+  
   = form.submit
