@@ -12,11 +12,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       reset_session
-      log_in @user 
-      flash[:success] = 'Welcome to our restaurant!'
-      redirect_to @user
+      log_in(@user) 
+      redirect_to(@user)
     else
-      render 'new'
+      render('new')
     end
   end
 
