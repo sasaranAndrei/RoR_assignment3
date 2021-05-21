@@ -38,3 +38,20 @@ p {
     color: red;
   }
 }
+.alert {
+  text-align: center;
+  border: 2px black solid;
+  color: black;
+}
+.alert-success {
+  background-color: lightgreen;
+}
+.alert-info {
+  background-color: yellow;
+}
+.alert-warning {
+  background-color: orange;
+}
+.alert-danger {
+  background-color: red;
+}

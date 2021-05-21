@@ -43,8 +43,10 @@ class ProductsController < ApplicationController
     if logged_in?
       id = params[:id].to_i
       session[:cart] << id unless session[:cart].include?(id)
+      flash[:success] = "#{ Product.find(id).title } successfully added to the cart"
       redirect_to(root_path)  
-    else 
+    else
+      flash[:danger] = 'Please log in before adding products to the cart'
       redirect_to(login_path)
     end
   end
