@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   
-  before_save   :downcase_email!
-  before_create :create_activation_digest!
+  before_save   :downcase_email
+  before_create :create_activation_digest
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 }, 
@@ -67,11 +67,11 @@ class User < ApplicationRecord
 
   private
 
-  def downcase_email!
+  def downcase_email
     self.email = email.downcase
   end
 
-  def create_activation_digest!
+  def create_activation_digest
     self.activation_token = User.new_token
     self.activation_digest = User.digest(activation_token)
   end
