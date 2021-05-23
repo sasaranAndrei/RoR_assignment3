@@ -36,6 +36,7 @@ class ProductsController < ApplicationController
 
   def destroy 
     @product.destroy
+    
     redirect_to(products_path)
   end
 
@@ -44,9 +45,11 @@ class ProductsController < ApplicationController
       id = params[:id].to_i
       session[:cart] << id unless session[:cart].include?(id)
       flash[:success] = "#{ Product.find(id).title } successfully added to the cart"
+      
       redirect_to(root_path)  
     else
       flash[:danger] = 'Please log in before adding products to the cart'
+      
       redirect_to(login_path)
     end
   end
@@ -54,6 +57,7 @@ class ProductsController < ApplicationController
   def remove_from_cart
     id = params[:id].to_i
     session[:cart].delete(id)
+    
     redirect_to(cart_path)
   end
 

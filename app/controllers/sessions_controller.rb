@@ -10,9 +10,11 @@ class SessionsController < ApplicationController
         reset_session
         log_in(user)
         session_params[:remember_me] == '1' ? remember(user) : forget(user)
+        
         redirect_to(forwarding_url || user)  
       else
         flash[:warning] = 'Account not activated. Please check your email for the activation link'
+        
         redirect_to(root_url)
       end
     else
@@ -23,6 +25,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
+    
     redirect_to(root_url)
   end
 end
