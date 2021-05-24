@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params)
+    
     if @product.valid?
       redirect_to(product_path(@product))
     else
@@ -27,6 +28,7 @@ class ProductsController < ApplicationController
 
   def update
     @product.update(product_params)
+    
     if @product.valid?
       redirect_to(product_path(@product))
     else

@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   def create
     session_params = params[:session]
     user = User.find_by(email: session_params[:email].downcase)
+    
     if user&.authenticate(session_params[:password])
       if user.activated?
         forwarding_url = session[:forwarding_url]
