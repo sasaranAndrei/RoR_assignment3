@@ -24,12 +24,12 @@ Rails.application.configure do
   host = 'https://polar-depths-33881.herokuapp.com/'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-  :port           => ENV['MAILGUN_SMTP_PORT'],
-  :address        => ENV['MAILGUN_SMTP_SERVER'],
-  :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-  :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-  :domain         => 'polar-depths-33881.heroku.com',
-  :authentication => :plain,
+    port:           ENV['MAILGUN_SMTP_PORT'],
+    address:        ENV['MAILGUN_SMTP_SERVER'],
+    user_name:      ENV['MAILGUN_SMTP_LOGIN'],
+    password:       ENV['MAILGUN_SMTP_PASSWORD'],
+    domain:         'polar-depths-33881.heroku.com',
+    authentication: :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
 
