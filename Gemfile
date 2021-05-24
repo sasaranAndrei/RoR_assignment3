@@ -8,6 +8,7 @@ gem 'sprockets',    '~> 4.0'
 gem 'carrierwave',  '~> 2.2'
 gem 'cloudinary',   '~> 1.20'
 gem 'haml-rails',   '~> 2.0'
+gem 'rexml',        '~> 3.2', '>= 3.2.4'
 
 gem 'rails',        '~> 6.1.3', '>= 6.1.3.1'
 gem 'pg',           '~> 1.1'
