@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: session_params[:email].downcase)
     
     if user&.authenticate(session_params[:password])
-      authenticate(user, session)
+      authenticate(user)
     else
       flash[:danger] = 'Invalid email / password combination'
       render('new')
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
 
   def authenticate(user)
     if user.activated?
-      forward_user(user)
+      forward(user)
     else
       flash[:warning] = 'Account not activated. Please check your email for the activation link'
       
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def forward_user(user)  
+  def forward(user)  
     forwarding_url = session[:forwarding_url]
     reset_session
     log_in(user)
