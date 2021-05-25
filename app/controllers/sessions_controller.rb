@@ -6,13 +6,9 @@ class SessionsController < ApplicationController
     user = User.find_by(email: session_params[:email].downcase)
     
     if user&.authenticate(session_params[:password])
+      #authenticate(user, session)
       if user.activated?
-        forwarding_url = session[:forwarding_url]
-        reset_session
-        log_in(user)
-        session_params[:remember_me] == '1' ? remember(user) : forget(user)
-        
-        redirect_to(forwarding_url || user)  
+        forward_user(user, session)
       else
         flash[:warning] = 'Account not activated. Please check your email for the activation link'
         
@@ -28,5 +24,20 @@ class SessionsController < ApplicationController
     log_out if logged_in?
     
     redirect_to(root_url)
+  end
+
+  private
+
+  def authenticate(user)
+
+  end
+
+  def forward_user(user)  
+    forwarding_url = session[:forwarding_url]
+    reset_session
+    log_in(user)
+    params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+    
+    redirect_to(forwarding_url || user)  
   end
 end
