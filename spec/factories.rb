@@ -10,7 +10,6 @@ FactoryBot.define do
   end
 
   factory :product do
-    id { FactoryHelpers.random_number }
     title { FactoryHelpers.random_string }
     description 'Desserts'
     price 5
