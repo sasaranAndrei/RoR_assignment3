@@ -4,10 +4,9 @@ require 'factories'
 RSpec.describe SessionsController, type: :request do
 
   describe 'POST sessions#create' do
-    #let(:user) { build :user, name: 'Name', email: 'email@domain.com', password: '123456', password_confirmation: '123456' }
-      
     before(:all) do
       user = create(:user)
+      
       post login_path, params: { session: { email: user.email, password: user.password } }
     end
   
