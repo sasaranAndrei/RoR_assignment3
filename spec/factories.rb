@@ -1,17 +1,14 @@
-require 'factory_helpers'
-
 FactoryBot.define do
   
   factory :user do
-    name { FactoryHelpers.random_string }
-    email "#{ FactoryHelpers.random_string }@gmail.com"
+    name 'Test Name'
+    email 'test@email.com'
     password '123456'
     password_confirmation '123456'
   end
 
   factory :product do
-    id 1000
-    title { FactoryHelpers.random_string }
+    title 'Test Title'
     description 'Desserts'
     price 5
 
