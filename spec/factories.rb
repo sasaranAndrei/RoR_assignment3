@@ -10,8 +10,13 @@ FactoryBot.define do
   end
 
   factory :product do
+    id 1000
     title { FactoryHelpers.random_string }
     description 'Desserts'
     price 5
+
+    after(:build) do |product|
+      product.picture.attach(io: File.open('public/images/factory_product_image.png'), filename: 'factory_product_image.png', content_type: 'image/png')
+    end
   end
 end
