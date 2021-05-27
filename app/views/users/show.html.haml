@@ -1,11 +1,18 @@
 .row
   %aside.col-md-4
     %section.user-info
-      %h1
+      .info-user
         = gravatar_for(@user)
-        = @user.name
-        %br/
-        %br/
-        %br/
-        %br/
+        %h1.profile-username= @user.name
         = link_to 'Go to Home page', root_path
+    .orders
+      %h2 Your orders:
+      - if @orders.empty?
+        %h3 You don't have any orders yet.
+        %h2= link_to 'Order some food', root_path
+      - else 
+        .orders-container
+          - @orders.each do |order|
+            .cart-box
+              %h2= order.date
+              %h3= order.address
