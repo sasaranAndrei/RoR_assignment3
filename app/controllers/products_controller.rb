@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   include SessionsHelper
   
-  before_action :initialize_session, :load_cart
+  before_action :load_cart
   before_action :current_product, only: %i[show edit update destroy]
   
   def index
@@ -45,7 +45,8 @@ class ProductsController < ApplicationController
   def add_to_cart 
     if logged_in?
       id = params[:id].to_i
-      session[:cart] << id unless session[:cart].include?(id)
+      current_user.cart << id unless current_user.cart.include?(id)
+      current_user.update_attribute(:cart, current_user.cart)
       flash[:success] = "#{ Product.find(id).title } successfully added to the cart"
       
       redirect_to(root_path)  
@@ -58,19 +59,20 @@ class ProductsController < ApplicationController
   
   def remove_from_cart
     id = params[:id].to_i
-    session[:cart].delete(id)
-    
+    current_user.cart.delete(id)
+    current_user.update_attribute(:cart, current_user.cart)
+
     redirect_to(cart_path)
   end
 
   private
 
-  def initialize_session
-    session[:cart] ||= []
-  end
-
   def load_cart
-    @cart = Product.find(session[:cart])
+    if logged_in?
+      @cart = Product.find(current_user.cart)
+    else
+      redirect_to(login_path)
+    end
   end
 
   def product_params
