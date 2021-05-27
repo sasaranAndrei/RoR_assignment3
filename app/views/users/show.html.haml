@@ -16,3 +16,9 @@
             .cart-box
               %h2= order.date
               %h3= order.address
+              -# = link_to 'See details', order_path(order)
+              -# - products = Product.find(order.products)
+              -# - products.each do |product|
+              -#   %h2= product.title
+              -#   %h3= product.description
+              -#   %h4= "#{ product.price.to_s } $"

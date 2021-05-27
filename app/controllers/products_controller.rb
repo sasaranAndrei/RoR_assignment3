@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   
   before_action :load_cart
   before_action :current_product, only: %i[show edit update destroy]
+  before_action :is_admin, only: :index
   
   def index
     @products = Product.all
@@ -81,5 +82,9 @@ class ProductsController < ApplicationController
 
   def current_product
     @product = Product.find(params[:id])
+  end
+
+  def is_admin
+    current_user.admin?
   end
 end
