@@ -21,9 +21,11 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.active_storage.service = :local
+  config.active_storage.service = :cloudinary
 
   config.action_mailer.raise_delivery_errors = false
+  host = 'localhost:3000'
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 
   config.action_mailer.perform_caching = false
 

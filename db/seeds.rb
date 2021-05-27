@@ -7,3 +7,8 @@ Product.create([
   { title: 'Item Five', description: 'Second courses', price: 57.00 }, 
   { title: 'Item Six', description: 'Second courses', price: 102.00 }
 ])
+
+User.create([
+  { name: 'Sasaran Andrei', email: 'sasaranandreipaul@gmail.com', password: '123456', password_confirmation: '123456', admin: true, activated: true, activated_at: Time.zone.now },
+  { name: 'Slim Shady', email: 'slim@shady.com', password: '123456', password_confirmation: '123456', admin: false, activated: true, activated_at: Time.zone.now }
+])

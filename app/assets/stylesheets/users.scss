@@ -23,21 +23,26 @@ aside {
     }
   }
 }
+
 .gravatar {
   float: left;
   margin-right: 10px;
 }
+
 .gravatar_edit {
   margin-top: 15px; 
 }
-.row{
+
+.row {
   display: flex;
   justify-content: center;
 }
+
 .col-md-6.col-md-offset-3 {
   width: 25%;
   text-align: center;
 }
+
 input.form-control, textarea.form-control, select.form-control {
   border: 1px solid #bbb;
   width: 100%;
