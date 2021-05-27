@@ -1,0 +1,22 @@
+%h1.page-title Place an order
+.row
+  .col-md-6.col-md-offset-3
+    = form_with model: @order do |form|
+      = form.label :address
+      = form.text_field :address, placeholder: 'Default user address', class: 'form-control'
+
+      = form.label :delivery_date
+      = form.text_field :delivery_date, placeholder: Time.now, class: 'form-control'
+      
+      = form.label :mentions
+      = form.text_field :mentions, placeholder: 'Other mentions (ex: Watch out for the dog)', class: 'form-control'
+      
+      = form.submit 'Place order', class: 'header-btn btn-login'
+.cart-container
+  - @cart.each do |product|
+    .cart-box
+      %h2= product.title
+      %h3= product.description
+      %h4= "#{ product.price.to_s } $"
+      = button_to 'remove', remove_from_cart_product_path(product), class: 'header-btn btn-logout', method: :delete
+%h4= "Total price of your cart: #{ total_price(@cart) } $"

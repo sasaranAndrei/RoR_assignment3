@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   include SessionsHelper
+  include UsersHelper
   
   before_action :load_cart
   before_action :current_product, only: %i[show edit update destroy]
@@ -68,23 +69,11 @@ class ProductsController < ApplicationController
 
   private
 
-  def load_cart
-    if logged_in?
-      @cart = Product.find(current_user.cart)
-    else
-      redirect_to(login_path)
-    end
-  end
-
   def product_params
     params.require(:product).permit(:title, :description, :price, :picture)
   end
 
   def current_product
     @product = Product.find(params[:id])
-  end
-
-  def is_admin
-    current_user.admin?
   end
 end
