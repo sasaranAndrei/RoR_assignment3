@@ -3,7 +3,6 @@
   %h3 Your cart is empty!
 - else 
   .cart-container
-    = hidden_field_tag :cart, @cart
     - @cart.each do |product|
       .cart-box
         %h2= product.title
@@ -13,4 +12,3 @@
   %h4= "Total price of your cart: #{ total_price(@cart) } $"
   %h3= link_to 'Place order', new_order_path, class: 'header-btn btn-login'
 %h2= link_to 'Back to products page', root_path
-

@@ -1,1 +1,11 @@
-%h1.page-title Show an order
+%h1.page-title Order details
+%h2= @order.delivery_date
+%h3= @order.address
+- products = Product.find(@order.products)
+.cart-container
+  - products.each do |product|
+    .cart-box
+      %h2= product.title
+      %h3= product.description
+      %h4= "#{ product.price.to_s } $"
+%h4= "Total price of your cart: #{ total_price(products) } $"
