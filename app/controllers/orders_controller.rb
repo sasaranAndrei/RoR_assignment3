@@ -10,6 +10,20 @@ class OrdersController < ApplicationController
 
   def show; end
 
+  def edit; end
+
+  def update
+    @order.update(order_params)
+    status = params[:order][:status]
+    @order.update_attribute(:status, Order.statuses[status])
+    byebug
+    if @order.valid?
+      redirect_to(@order)
+    else
+      redirect_to(@orders)
+    end
+  end
+
   def new
     @order = Order.new
   end
@@ -24,6 +38,12 @@ class OrdersController < ApplicationController
     else
       redirect_to(new_order_path)
     end
+  end
+
+  def destroy
+    @order.destroy
+    
+    redirect_to(orders_path)
   end
 
   private
