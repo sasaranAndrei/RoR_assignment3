@@ -5,10 +5,10 @@ class OrdersController < ApplicationController
   before_action :current_order, only: %i[show edit update destroy]
 
   def index
+    @orders = Order.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @order = Order.new
