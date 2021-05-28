@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   before_action :load_cart
   before_action :current_order, only: %i[show edit update destroy]
   before_action :is_admin, only: :index
-  
+
   def index
     @orders = Order.all
   end
@@ -17,7 +17,6 @@ class OrdersController < ApplicationController
     @order.update(order_params)
     status = params[:order][:status]
     @order.update_attribute(:status, Order.statuses[status])
-    byebug
     if @order.valid?
       redirect_to(@order)
     else
