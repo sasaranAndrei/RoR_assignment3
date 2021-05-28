@@ -17,7 +17,12 @@ class OrdersController < ApplicationController
     @order.update(order_params)
     status = params[:order][:status]
     @order.update_attribute(:status, Order.statuses[status])
-    redirect_to(@orders)
+
+    if @order.valid?
+      redirect_to(@order)
+    else
+      redirect_to(@orders)
+    end
   end
 
   def new
