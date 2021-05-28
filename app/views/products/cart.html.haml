@@ -1,6 +1,7 @@
 %h1.page-title Your cart contains:
 - if @cart.empty?
   %h3 Your cart is empty!
+  %h3= link_to 'See your orders', current_user, class: 'header-btn btn-login'
 - else 
   .cart-container
     - @cart.each do |product|
