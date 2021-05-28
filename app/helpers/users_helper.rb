@@ -6,7 +6,10 @@ module UsersHelper
   end
 
   def is_admin
-    current_user.admin?
+    unless current_user.admin?
+      flash[:warning] = 'Please log in as an admin'
+      redirect_to(login_path) 
+    end
   end
 
   def load_cart

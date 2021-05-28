@@ -3,7 +3,8 @@ class OrdersController < ApplicationController
 
   before_action :load_cart
   before_action :current_order, only: %i[show edit update destroy]
-
+  before_action :is_admin, only: :index
+  
   def index
     @orders = Order.all
   end

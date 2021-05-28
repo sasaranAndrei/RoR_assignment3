@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :current_user, only: %i[show edit update destroy]
+  before_action :is_admin, only: :index
   
   def show
     @orders = @user.orders
