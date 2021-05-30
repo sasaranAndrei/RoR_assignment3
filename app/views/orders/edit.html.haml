@@ -1,0 +1,15 @@
+%h3.page-title Update Order Details
+= form_with model: @order do |form|
+  = form.label :address
+  = form.text_field :address, placeholder: @order.address, class: 'form-control'
+
+  = form.label :delivery_date
+  = form.text_field :delivery_date, placeholder: @order.delivery_date, class: 'form-control'
+  
+  = form.label :mentions
+  = form.text_area :mentions, placeholder: @order.mentions, rows: '5', class: 'form-control mentions'
+  
+  = form.label :status
+  = form.select :status, collection: Order.statuses.keys
+
+  = form.submit 'Update Order', class: 'header-btn btn-login'

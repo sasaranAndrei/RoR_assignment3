@@ -2,6 +2,8 @@
   %nav.authentication-nav
     %ul.authentication-ul
       - if logged_in?
+        %li= link_to 'Orders Dashboard', orders_dashboard_path, class: 'header-btn btn-login' if current_user.admin?
+        %li= link_to 'Products Dashboard', products_dashboard_path, class: 'header-btn btn-signup' if current_user.admin?
         %li= link_to 'Log out', logout_path, class: 'header-btn btn-logout', method: :delete
         %li= link_to 'My profile', current_user, class: 'header-btn'
         %li= link_to image_tag('cart.jpg', class: 'logo-cart'), cart_path, class: 'header-btn', method: 'get'

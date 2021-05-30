@@ -1,4 +1,7 @@
+@import 'variables';
+
 aside {
+  width: 100%;
   section.user_info {
     margin-top: 20px;
   }
@@ -47,4 +50,20 @@ input.form-control, textarea.form-control, select.form-control {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
+}
+
+.info-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.orders-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-username {
+  color: $site-color-darker;
 }
