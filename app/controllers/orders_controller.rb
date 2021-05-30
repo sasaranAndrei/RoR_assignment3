@@ -29,10 +29,17 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
-  def create
+  def create_order
     @order = Order.new(order_params)
     @order.user_id = current_user.id
     @order.products = current_user.cart
+    
+    @order
+  end
+
+  def create
+    @order = create_order
+    
     if @order.save
       current_user.update_attribute(:cart, [])
       redirect_to(@order)
